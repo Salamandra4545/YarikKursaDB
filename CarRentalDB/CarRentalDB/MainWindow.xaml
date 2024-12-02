@@ -1,0 +1,89 @@
+<Window x:Class="CarRentalApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление прокатом автомобилей"  Background="Black" Foreground="White" Height="450" Width="800">
+	<Grid>
+		<TabControl Background="Black" Foreground="White">
+			<!-- Вкладка с клиентами -->
+			<TabItem Header="Клиенты" Background="Black" Foreground="White" BorderBrush="#FF4E4E4E">
+				<StackPanel>
+					<DataGrid x:Name="CustomersDataGrid" IsReadOnly="False" 
+                              CanUserAddRows="True" CanUserDeleteRows="True" 
+                              CellEditEnding="CustomersDataGrid_CellEditEnding" SelectionChanged="CustomersDataGrid_SelectionChanged" Background="Black" BorderBrush="Black">
+						<DataGrid.Columns>
+							<!-- Добавьте другие столбцы по мере необходимости -->
+						</DataGrid.Columns>
+					</DataGrid>
+					<Button Content="Добавить" Click="AddCustomer_Click" Background="#FF020202" Foreground="White" />
+					<Button Content="Сохранить изменения" Click="SaveChanges_Click" Background="#FF020202" Foreground="White" />
+					<Button Content="Удалить Выбранные" Click="DeleteSelectedRows_Click" Background="#FF020202" Foreground="White" />
+				</StackPanel>
+			</TabItem>
+
+			<!-- Вкладка с подписками -->
+			<TabItem Header="Подписки" Background="Black" Foreground="White" BorderBrush="#FF4E4E4E">
+				<StackPanel>
+					<DataGrid x:Name="SubscriptionsDataGrid" IsReadOnly="False" 
+                              CanUserAddRows="True" CanUserDeleteRows="True" 
+                              CellEditEnding="SubscriptionsDataGrid_CellEditEnding">
+						<DataGrid.Columns>
+							<!-- Добавьте другие столбцы по мере необходимости -->
+						</DataGrid.Columns>
+					</DataGrid>
+					<Button Content="Добавить" Click="AddSubscription_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Сохранить изменения" Click="SaveChanges_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Удалить Выбранные" Click="DeleteSelectedRows_Click" Background="#FF0C0C0C" Foreground="White"  />
+				</StackPanel>
+			</TabItem>
+
+			<!-- Вкладка с арендами -->
+			<TabItem Header="Аренды" Background="Black" Foreground="White" BorderBrush="#FF4E4E4E">
+				<StackPanel>
+					<DataGrid x:Name="RentalsDataGrid" IsReadOnly="False" 
+                              CanUserAddRows="True" CanUserDeleteRows="True" 
+                              CellEditEnding="RentalsDataGrid_CellEditEnding">
+						<DataGrid.Columns>
+							<!-- Добавьте другие столбцы по мере необходимости -->
+						</DataGrid.Columns>
+					</DataGrid>
+					<Button Content="Добавить" Click="AddRental_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Сохранить изменения" Click="SaveChanges_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Удалить Выбранные" Click="DeleteSelectedRows_Click" Background="#FF0C0C0C" Foreground="White"  />
+				</StackPanel>
+			</TabItem>
+
+			<!-- Вкладка для подписок клиентов -->
+			<TabItem Header="Подписки клиентов" Background="Black" Foreground="White" BorderBrush="#FF4E4E4E">
+				<StackPanel>
+					<DataGrid x:Name="CustomerSubscriptionsDataGrid" IsReadOnly="False" 
+                              CanUserAddRows="True" CanUserDeleteRows="True">
+						<DataGrid.Columns>
+						</DataGrid.Columns>
+					</DataGrid>
+					<Button Content="Добавить" Click="AddCustomerSubscription_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Сохранить изменения" Click="SaveChanges_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Удалить Выбранные" Click="DeleteSelectedRows_Click" Background="#FF0C0C0C" Foreground="White"  />
+				</StackPanel>
+			</TabItem>
+
+			<!-- Вкладка для автомобилей -->
+			<TabItem Header="Автомобили" Background="Black" Foreground="White" BorderBrush="#FF4E4E4E">
+				<StackPanel>
+					<DataGrid x:Name="CarsDataGrid" IsReadOnly="False" 
+                              CanUserAddRows="True" CanUserDeleteRows="True">
+						<DataGrid.Columns>
+						</DataGrid.Columns>
+					</DataGrid>
+					<Button Content="Добавить" Click="AddCar_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Сохранить изменения" Click="SaveChanges_Click" Background="#FF0C0C0C" Foreground="White"  />
+					<Button Content="Удалить Выбранные" Click="DeleteSelectedRows_Click" Background="#FF0C0C0C" Foreground="White"  />
+				</StackPanel>
+			</TabItem>
+
+			<!-- Вкладка для вывода информации по функциям -->
+			<TabItem Header="Функции" Background="Black" Foreground="White" BorderBrush="#FF4E4E4E">
+				<ListBox x:Name="FunctionsListBox" Foreground="White" Background="Black" />
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>
